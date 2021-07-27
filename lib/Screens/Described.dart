@@ -138,7 +138,7 @@ class _DescribtionScreenState extends State<DescribtionScreen> {
                     width: MediaQuery.of(context).size.width / 4,
                     alignment: Alignment.centerLeft,
                     decoration: BoxDecoration(
-                        color: Colors.blue[700].withOpacity(0.8),
+                        color: Color.fromRGBO(1, 30, 41, 1),
                         borderRadius: BorderRadius.circular(10)),
                     child: GestureDetector(
                       onTap: () {

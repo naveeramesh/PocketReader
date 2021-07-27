@@ -28,6 +28,13 @@ class _CategoryPageState extends State<CategoryPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          Navigator.pop(context);
+        },
+        backgroundColor: Color.fromRGBO(1, 30, 41, 1),
+        child: Icon(Icons.arrow_back_ios_new_outlined),
+      ),
       body: SafeArea(
         child: Container(
           child: Column(
@@ -36,11 +43,10 @@ class _CategoryPageState extends State<CategoryPage> {
               Row(
                 children: [
                   Padding(
-                    padding: const EdgeInsets.all(10.0),
+                    padding: const EdgeInsets.only(top: 3.0),
                     child: Container(
-                      height: 30,
-                      child: Image.network(
-                          'https://image.flaticon.com/icons/png/512/3009/3009335.png'),
+                      height: 50,
+                      child: Image.asset('assets/images/logo.jpg'),
                     ),
                   ),
                   Text(
@@ -133,7 +139,7 @@ class _CategoryPageState extends State<CategoryPage> {
                       }
                       return Center(
                           child: CircularProgressIndicator(
-                        backgroundColor: Colors.green,
+                        backgroundColor: Color.fromRGBO(1, 30, 41, 1),
                       ));
                     }),
               ),

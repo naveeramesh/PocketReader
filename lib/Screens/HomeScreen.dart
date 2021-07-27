@@ -46,12 +46,10 @@ class _HomeScreenState extends State<HomeScreen> {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Padding(
-                padding: const EdgeInsets.all(10.0),
+                padding: const EdgeInsets.only(top:3),
                 child: Container(
-                  height: 40,
-                  // child: Image.asset('assets/images/logo.PNG'),
-                  child: Image.network(
-                      'https://image.flaticon.com/icons/png/512/3009/3009335.png'),
+                  height: 70,
+                  child: Image.asset('assets/images/logo.jpg'),
                 ),
               ),
               Padding(
@@ -112,7 +110,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 ),
               ),
               Padding(
-                padding: const EdgeInsets.only(left: 20, top: 20),
+                padding: const EdgeInsets.only(left: 20, top: 20, bottom: 10),
                 child: Text(
                   'Top Headlines',
                   style: GoogleFonts.lato(
@@ -202,7 +200,7 @@ class _HomeScreenState extends State<HomeScreen> {
                         }
                         return Center(
                             child: CircularProgressIndicator(
-                          backgroundColor: Colors.green,
+                          backgroundColor: Color.fromRGBO(1, 30, 41, 1),
                         ));
                       }),
                 ),

@@ -20,8 +20,8 @@ class _DetailNewsState extends State<DetailNews> {
         onPressed: () {
           Navigator.pop(context);
         },
-        backgroundColor: Colors.blueAccent[900],
-        child: Icon(Icons.arrow_back_ios_new_outlined),
+        backgroundColor: Color.fromRGBO(1, 30, 41, 1),
+        child: Icon(Icons.clear),
       ),
       body: SafeArea(
         child: WebView(
