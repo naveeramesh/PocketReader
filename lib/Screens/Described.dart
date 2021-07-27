@@ -40,62 +40,86 @@ class _DescribtionScreenState extends State<DescribtionScreen> {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Padding(
-                      padding: const EdgeInsets.only(top: 20.0),
-                      child: IconButton(
-                          onPressed: () {
-                            Navigator.pop(context);
-                          },
-                          icon: Icon(
-                            Icons.arrow_back_sharp,
-                            color: Colors.white,
-                          )),
+                      padding: const EdgeInsets.only(top: 40.0, left: 10),
+                      child: CircleAvatar(
+                        backgroundColor: Colors.white,
+                        child: IconButton(
+                            onPressed: () {
+                              Navigator.pop(context);
+                            },
+                            icon: Icon(
+                              Icons.arrow_back_sharp,
+                              color: Colors.black,
+                            )),
+                      ),
                     ),
                     Padding(
                       padding: const EdgeInsets.all(8.0),
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          Container(
-                              child: Text(
-                            widget.article.source.name,
-                            style: GoogleFonts.lato(
-                                color: Colors.white.withOpacity(0.9),
-                                fontWeight: FontWeight.w600,
-                                fontSize: 20),
-                          )),
-                          Container(
-                              child: Row(
+                          Padding(
+                            padding: const EdgeInsets.all(2.0),
+                            child: Container(
+                                decoration: BoxDecoration(
+                                    color: Colors.white,
+                                    borderRadius: BorderRadius.circular(40)),
+                                child: Padding(
+                                  padding: const EdgeInsets.all(8.0),
+                                  child: Text(
+                                    widget.article.source.name,
+                                    style: GoogleFonts.lato(
+                                        color: Colors.black.withOpacity(0.9),
+                                        fontWeight: FontWeight.w600,
+                                        fontSize: 10),
+                                  ),
+                                )),
+                          ),
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
-                              Text(
-                                'Author: ',
-                                style: GoogleFonts.lato(
-                                    color: Colors.white.withOpacity(0.9),
-                                    fontWeight: FontWeight.w600,
-                                    fontSize: 20),
+                              Padding(
+                                padding: const EdgeInsets.all(2.0),
+                                child: Container(
+                                    decoration: BoxDecoration(
+                                        color: Colors.white,
+                                        borderRadius:
+                                            BorderRadius.circular(40)),
+                                    child: Padding(
+                                      padding: const EdgeInsets.all(8.0),
+                                      child: Text(
+                                        'Author: ${(widget.article.author)}',
+                                        style: GoogleFonts.lato(
+                                            color:
+                                                Colors.black.withOpacity(0.9),
+                                            fontWeight: FontWeight.w600,
+                                            fontSize: 10),
+                                      ),
+                                    )),
                               ),
                               Padding(
-                                padding: const EdgeInsets.all(8.0),
-                                child: Text(
-                                  widget.article.author.toString() == "null"
-                                      ? "No Author"
-                                      : widget.article.author,
-                                  style: GoogleFonts.lato(
-                                      color: Colors.white.withOpacity(0.9),
-                                      fontWeight: FontWeight.w600,
-                                      fontSize: 18),
+                                padding: const EdgeInsets.all(3.0),
+                                child: Container(
+                                  decoration: BoxDecoration(
+                                      color: Colors.white,
+                                      borderRadius: BorderRadius.circular(40)),
+                                  child: Padding(
+                                    padding: const EdgeInsets.only(right: 8.0),
+                                    child: Padding(
+                                      padding: const EdgeInsets.all(8.0),
+                                      child: Text(
+                                        widget.article.publishedAt,
+                                        style: GoogleFonts.lato(
+                                            color:
+                                                Colors.black.withOpacity(0.9),
+                                            fontWeight: FontWeight.w600,
+                                            fontSize: 10),
+                                      ),
+                                    ),
+                                  ),
                                 ),
                               ),
                             ],
-                          )),
-                          Padding(
-                            padding: const EdgeInsets.only(right: 8.0),
-                            child: Text(
-                              widget.article.publishedAt,
-                              style: GoogleFonts.lato(
-                                  color: Colors.white.withOpacity(0.9),
-                                  fontWeight: FontWeight.w600,
-                                  fontSize: 15),
-                            ),
                           )
                         ],
                       ),
@@ -104,7 +128,7 @@ class _DescribtionScreenState extends State<DescribtionScreen> {
                 ),
               ),
               Padding(
-                padding: const EdgeInsets.only(left: 20.0, top: 10),
+                padding: const EdgeInsets.only(left: 20.0, top: 10, right: 10),
                 child: Container(
                     alignment: Alignment.centerLeft,
                     child: Text(
@@ -116,7 +140,7 @@ class _DescribtionScreenState extends State<DescribtionScreen> {
                     )),
               ),
               Padding(
-                padding: const EdgeInsets.only(left: 20.0, top: 10),
+                padding: const EdgeInsets.only(left: 20.0, top: 10, right: 20),
                 child: Container(
                     alignment: Alignment.centerLeft,
                     child: Text(
@@ -134,12 +158,12 @@ class _DescribtionScreenState extends State<DescribtionScreen> {
               Padding(
                 padding: const EdgeInsets.only(left: 10, bottom: 20),
                 child: Container(
-                    height: 50,
-                    width: MediaQuery.of(context).size.width / 4,
+                    height: 45,
+                    width: 100,
                     alignment: Alignment.centerLeft,
                     decoration: BoxDecoration(
                         color: Color.fromRGBO(1, 30, 41, 1),
-                        borderRadius: BorderRadius.circular(10)),
+                        borderRadius: BorderRadius.circular(40)),
                     child: GestureDetector(
                       onTap: () {
                         Navigator.push(

@@ -45,12 +45,30 @@ class _HomeScreenState extends State<HomeScreen> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Padding(
-                padding: const EdgeInsets.only(top:3),
-                child: Container(
-                  height: 70,
-                  child: Image.asset('assets/images/logo.jpg'),
-                ),
+              Row(
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.only(top: 3),
+                    child: Container(
+                      height: 70,
+                      child: Image.asset('assets/images/logo.jpg'),
+                    ),
+                  ),
+                  Text(
+                    "Pocket ",
+                    style: GoogleFonts.lato(
+                        color: Colors.black,
+                        fontSize: 20.5,
+                        fontWeight: FontWeight.bold),
+                  ),
+                  Text(
+                    "Reader",
+                    style: GoogleFonts.lato(
+                        color: Colors.black,
+                        fontSize: 20.5,
+                        fontWeight: FontWeight.w400),
+                  )
+                ],
               ),
               Padding(
                 padding: const EdgeInsets.only(left: 20, bottom: 10),
@@ -88,7 +106,7 @@ class _HomeScreenState extends State<HomeScreen> {
                             height: MediaQuery.of(context).size.height / 5,
                             width: MediaQuery.of(context).size.width / 2.3,
                             decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(20),
+                                borderRadius: BorderRadius.circular(10),
                                 image: DecorationImage(
                                     image: NetworkImage(
                                         categories[index].imageurl),
@@ -96,12 +114,14 @@ class _HomeScreenState extends State<HomeScreen> {
                           ),
                         ),
                         Positioned(
-                          top: 60,
+                          top: 70,
                           left: 10,
                           child: Text(
                             categories[index].category,
                             style: GoogleFonts.lato(
-                                color: Colors.white, fontSize: 18),
+                                fontWeight: FontWeight.bold,
+                                color: Colors.white,
+                                fontSize: 18),
                           ),
                         )
                       ]),
@@ -199,9 +219,18 @@ class _HomeScreenState extends State<HomeScreen> {
                           );
                         }
                         return Center(
-                            child: CircularProgressIndicator(
-                          backgroundColor: Color.fromRGBO(1, 30, 41, 1),
-                        ));
+                          child: Container(
+                            height: 30,
+                            width: 30,
+                            child: Center(
+                              child: CircularProgressIndicator(
+                                valueColor: AlwaysStoppedAnimation<Color>(
+                                    Color.fromRGBO(1, 30, 41, 1)),
+                                // backgroundColor: Color.fromRGBO(1, 30, 41, 1),
+                              ),
+                            ),
+                          ),
+                        );
                       }),
                 ),
               ),

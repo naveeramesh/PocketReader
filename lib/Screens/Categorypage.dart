@@ -43,18 +43,14 @@ class _CategoryPageState extends State<CategoryPage> {
               Row(
                 children: [
                   Padding(
-                    padding: const EdgeInsets.only(top: 3.0),
-                    child: Container(
-                      height: 50,
-                      child: Image.asset('assets/images/logo.jpg'),
+                    padding: const EdgeInsets.only(top: 10.0, left: 20),
+                    child: Text(
+                      widget.category,
+                      style: GoogleFonts.lato(
+                          color: Colors.black,
+                          fontSize: 20,
+                          fontWeight: FontWeight.bold),
                     ),
-                  ),
-                  Text(
-                    widget.category,
-                    style: GoogleFonts.lato(
-                        color: Colors.black,
-                        fontSize: 20,
-                        fontWeight: FontWeight.bold),
                   )
                 ],
               ),
@@ -77,7 +73,6 @@ class _CategoryPageState extends State<CategoryPage> {
                                     nextPage(article[index]);
                                   },
                                   child: Container(
-                                    // height: 200,
                                     margin: EdgeInsets.all(12),
                                     padding: EdgeInsets.all(8),
                                     decoration: BoxDecoration(
@@ -139,7 +134,9 @@ class _CategoryPageState extends State<CategoryPage> {
                       }
                       return Center(
                           child: CircularProgressIndicator(
-                        backgroundColor: Color.fromRGBO(1, 30, 41, 1),
+                        valueColor: AlwaysStoppedAnimation<Color>(
+                          Color.fromRGBO(1, 30, 41, 1),
+                        ),
                       ));
                     }),
               ),

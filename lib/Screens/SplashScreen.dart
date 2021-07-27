@@ -30,24 +30,31 @@ class _SplashScreenState extends State<SplashScreen> {
             children: [
               Container(
                 alignment: Alignment.center,
-                height: MediaQuery.of(context).size.height / 2,
-                child: Image.asset('assets/images/logo.jpg', fit: BoxFit.cover),
+                // height: MediaQuery.of(context).size.height / 2,
+                child: Image.asset('assets/images/splash.jpg', fit: BoxFit.cover),
               ),
-              Text(
-                "Pocket Reader",
-                style: GoogleFonts.lato(
-                    color: Color.fromRGBO(1, 30, 41, 1),
-                    fontWeight: FontWeight.bold,
-                    letterSpacing: 1,
-                    fontSize: 20),
+              Padding(
+                padding: const EdgeInsets.only(top:10.0),
+                child: Text(
+                  "Pocket Reader",
+                  style: GoogleFonts.lato(
+                      color: Color.fromRGBO(1, 30, 41, 1),
+                      fontWeight: FontWeight.bold,
+                      letterSpacing: 1,
+                      fontSize: 20),
+                ),
               ),
               SizedBox(
-                height: 20,
+                height: MediaQuery.of(context).size.height/7,
               ),
               Container(
+                height: 30,
+                width: 30,
                 child: Center(
                   child: CircularProgressIndicator(
-                    backgroundColor: Color.fromRGBO(1, 30, 41, 1),
+                    valueColor: AlwaysStoppedAnimation<Color>(
+                        Color.fromRGBO(1, 30, 41, 1)),
+                    // backgroundColor: Color.fromRGBO(1, 30, 41, 1),
                   ),
                 ),
               )
