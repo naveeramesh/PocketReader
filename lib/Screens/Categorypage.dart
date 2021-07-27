@@ -38,8 +38,9 @@ class _CategoryPageState extends State<CategoryPage> {
                   Padding(
                     padding: const EdgeInsets.all(10.0),
                     child: Container(
-                      height: 50,
-                      child: Image.asset('assets/images/logo.PNG'),
+                      height: 30,
+                      child: Image.network(
+                          'https://image.flaticon.com/icons/png/512/3009/3009335.png'),
                     ),
                   ),
                   Text(

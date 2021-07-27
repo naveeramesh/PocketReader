@@ -121,90 +121,91 @@ class _HomeScreenState extends State<HomeScreen> {
                       fontWeight: FontWeight.w800),
                 ),
               ),
-              Container(
-                height: MediaQuery.of(context).size.height / 1.6,
-                child: FutureBuilder(
-                    future: client.getArticle(),
-                    builder: (BuildContext context,
-                        AsyncSnapshot<List<Article>> snapshot) {
-                      if (snapshot.hasData) {
-                        List<Article> article = snapshot.data;
-                        return Container(
-                          height: MediaQuery.of(context).size.height / 3,
-                          child: ListView.builder(
-                              scrollDirection: Axis.vertical,
-                              itemCount: article.length,
-                              itemBuilder: (context, index) {
-                                return GestureDetector(
-                                  onTap: () {
-                                    nextPage(article[index]);
-                                  },
-                                  child: Container(
-                                    // height: 200,
-                                    margin: EdgeInsets.all(12),
-                                    padding: EdgeInsets.all(8),
-                                    decoration: BoxDecoration(
-                                        color: Colors.black26.withAlpha(7),
-                                        borderRadius:
-                                            BorderRadius.circular(20)),
-                                    child: Column(
-                                      children: [
-                                        Container(
-                                          height: 200,
-                                          width: double.infinity,
-                                          decoration: BoxDecoration(
-                                              borderRadius:
-                                                  BorderRadius.circular(20),
-                                              image: DecorationImage(
-                                                  image: NetworkImage(
-                                                      article[index]
-                                                                  .urlToImage ==
-                                                              null
-                                                          ? ""
-                                                          : article[index]
-                                                              .urlToImage),
-                                                  fit: BoxFit.cover)),
-                                        ),
-                                        SizedBox(
-                                          height: 8,
-                                        ),
-                                        Container(
-                                          child: Row(
-                                            children: [
-                                              Text(
-                                                article[index].source.name,
-                                                style: GoogleFonts.lato(
-                                                    fontSize: 18,
-                                                    color: Colors.black,
-                                                    fontWeight:
-                                                        FontWeight.bold),
-                                              ),
-                                            ],
+              Expanded(
+                child: Container(
+                  child: FutureBuilder(
+                      future: client.getArticle(),
+                      builder: (BuildContext context,
+                          AsyncSnapshot<List<Article>> snapshot) {
+                        if (snapshot.hasData) {
+                          List<Article> article = snapshot.data;
+                          return Container(
+                            height: MediaQuery.of(context).size.height / 3,
+                            child: ListView.builder(
+                                scrollDirection: Axis.vertical,
+                                itemCount: article.length,
+                                itemBuilder: (context, index) {
+                                  return GestureDetector(
+                                    onTap: () {
+                                      nextPage(article[index]);
+                                    },
+                                    child: Container(
+                                      // height: 200,
+                                      margin: EdgeInsets.all(12),
+                                      padding: EdgeInsets.all(8),
+                                      decoration: BoxDecoration(
+                                          color: Colors.black26.withAlpha(7),
+                                          borderRadius:
+                                              BorderRadius.circular(20)),
+                                      child: Column(
+                                        children: [
+                                          Container(
+                                            height: 200,
+                                            width: double.infinity,
+                                            decoration: BoxDecoration(
+                                                borderRadius:
+                                                    BorderRadius.circular(20),
+                                                image: DecorationImage(
+                                                    image: NetworkImage(article[
+                                                                    index]
+                                                                .urlToImage ==
+                                                            null
+                                                        ? ""
+                                                        : article[index]
+                                                            .urlToImage),
+                                                    fit: BoxFit.cover)),
                                           ),
-                                        ),
-                                        SizedBox(
-                                          height: 8,
-                                        ),
-                                        Container(
-                                          child: Text(
-                                            article[index].title,
-                                            style: GoogleFonts.lato(
-                                                color: Colors.black,
-                                                fontWeight: FontWeight.w600),
+                                          SizedBox(
+                                            height: 8,
                                           ),
-                                        )
-                                      ],
+                                          Container(
+                                            child: Row(
+                                              children: [
+                                                Text(
+                                                  article[index].source.name,
+                                                  style: GoogleFonts.lato(
+                                                      fontSize: 18,
+                                                      color: Colors.black,
+                                                      fontWeight:
+                                                          FontWeight.bold),
+                                                ),
+                                              ],
+                                            ),
+                                          ),
+                                          SizedBox(
+                                            height: 8,
+                                          ),
+                                          Container(
+                                            child: Text(
+                                              article[index].title,
+                                              style: GoogleFonts.lato(
+                                                  color: Colors.black,
+                                                  fontWeight: FontWeight.w600),
+                                            ),
+                                          )
+                                        ],
+                                      ),
                                     ),
-                                  ),
-                                );
-                              }),
-                        );
-                      }
-                      return Center(
-                          child: CircularProgressIndicator(
-                        backgroundColor: Colors.green,
-                      ));
-                    }),
+                                  );
+                                }),
+                          );
+                        }
+                        return Center(
+                            child: CircularProgressIndicator(
+                          backgroundColor: Colors.green,
+                        ));
+                      }),
+                ),
               ),
             ],
           ),
