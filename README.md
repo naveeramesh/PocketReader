@@ -1,16 +1,22 @@
 # pocket_reader
 
-A new Flutter project.
 
 ## Getting Started
 
-This project is a starting point for a Flutter application.
+This an news app where you can we the all over news of india based on categories and top headlines.
 
-A few resources to get you started if this is your first Flutter project:
+Stacks Used:
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
+* 1️⃣ Flutter -Google Framework UI kit
+* 2️⃣ Dart - Programming language
 
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+Features:
+
+* 💥 News api 
+
+## Description
+ 
+ * This is an flutter application named POCKET READER where the users can view their day to day news.
+
+ 
+
